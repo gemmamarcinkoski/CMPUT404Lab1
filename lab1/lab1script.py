@@ -2,7 +2,7 @@
 
 import requests
 
-response = requests.get('http://ccid-­eddieantonio.rhcloud.com/marcinko')
+response = requests.get('https://github.com/gemmamarcinkoski/CMPUT404Lab1/raw/master/lab1/lab1script.py')
 
 print response.text
 
