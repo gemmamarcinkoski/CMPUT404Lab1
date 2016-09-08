@@ -2,8 +2,7 @@
 
 import requests
 
-response = requests.post('http://ccid-­eddieantonio.rhcloud.com/marcinko')
+response = requests.get('http://ccid-­eddieantonio.rhcloud.com/marcinko')
 
-print response.status_code
-
+print response.text
 
