@@ -1,0 +1,70 @@
+code ran in lab
+
+virtualenv venv
+New python executable in venv/bin/python
+Installing setuptools, pip...done.
+marcinko@uf03:~/Documents/C404/lab4>source venv/bin/activate
+(venv)marcinko@uf03:~/Documents/C404/lab4>pip install Django==1.8
+Downloading/unpacking Django==1.8
+  Downloading Django-1.8-py2.py3-none-any.whl (6.2MB): 6.2MB downloaded
+Installing collected packages: Django
+Successfully installed Django
+Cleaning up...
+(venv)marcinko@uf03:~/Documents/C404/lab4>django-admin startproject mysite
+(venv)marcinko@uf03:~/Documents/C404/lab4>cd mysite/
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>ls
+manage.py  mysite
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>manage.py runserver
+bash: manage.py: command not found
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+
+September 29, 2016 - 20:07:09
+Django version 1.8, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[29/Sep/2016 20:07:31]"GET / HTTP/1.1" 200 1767
+[29/Sep/2016 20:07:31]"GET /favicon.ico HTTP/1.1" 404 1936
+
+(venv)marcinko@uf03://cshome/marcinko/Documents/C404/lab4/mysite>python manage.py runserver
+
+typed /polls to the right of the browser url, terminal shows:
+[29/Sep/2016 20:32:48]"GET /polls HTTP/1.1" 301 0
+[29/Sep/2016 20:32:48]"GET /polls/ HTTP/1.1" 200 37
+
+adding stuff to model (which is defining stff on our database) and a'polls' to our settings
+
+(venv)marcinko@uf03://cshome/marcinko/Documents/C404/lab4/mysite>python manage.py makemigrations polls
+Migrations for 'polls':
+  0001_initial.py:
+    - Create model Choice
+    - Create model Question
+    - Add field question to choice
+(venv)marcinko@uf03://cshome/marcinko/Documents/C404/lab4/mysite>python manage.py migrate
+Operations to perform:
+  Synchronize unmigrated apps: staticfiles, messages
+  Apply all migrations: admin, contenttypes, polls, auth, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying polls.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(venv)marcinko@uf03://cshome/marcinko/Documents/C404/lab4/mysite>
+

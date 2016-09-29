@@ -1,0 +1,35 @@
+code ran in lab
+
+virtualenv venv
+New python executable in venv/bin/python
+Installing setuptools, pip...done.
+marcinko@uf03:~/Documents/C404/lab4>source venv/bin/activate
+(venv)marcinko@uf03:~/Documents/C404/lab4>pip install Django==1.8
+Downloading/unpacking Django==1.8
+  Downloading Django-1.8-py2.py3-none-any.whl (6.2MB): 6.2MB downloaded
+Installing collected packages: Django
+Successfully installed Django
+Cleaning up...
+(venv)marcinko@uf03:~/Documents/C404/lab4>django-admin startproject mysite
+(venv)marcinko@uf03:~/Documents/C404/lab4>cd mysite/
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>ls
+manage.py  mysite
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>manage.py runserver
+bash: manage.py: command not found
+(venv)marcinko@uf03:~/Documents/C404/lab4/mysite>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have unapplied migrations; your app may not work properly until they are applied.
+Run 'python manage.py migrate' to apply them.
+
+September 29, 2016 - 20:07:09
+Django version 1.8, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[29/Sep/2016 20:07:31]"GET / HTTP/1.1" 200 1767
+[29/Sep/2016 20:07:31]"GET /favicon.ico HTTP/1.1" 404 1936
+
+(venv)marcinko@uf03://cshome/marcinko/Documents/C404/lab4/mysite>python manage.py runserver
+
