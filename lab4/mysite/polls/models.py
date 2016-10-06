@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
+import datetime
+from django.utils import timezone
 
 # Create your models here.
 #defining stuff we want to store on our dtabase
@@ -11,6 +13,10 @@ class Question(models.Model): #this si going to be a table
 	def __str__(self):
 		#so that python returns data neatly
 		return self.question_text
+	def was_published_recently(self):
+#we want this to return tue if the question was published in the last day
+		now = timezone.now()
+		return now -  datetime.timedelta(days=1) <= self.pub_date <= now
 
 @python_2_unicode_compatible
 class Choice(models.Model):
